@@ -46,9 +46,7 @@ def user_password_change(username, password):
 
                     password_edit_in_page = session.post(EDIT_PASSWORD_URL, data=data1)
 
-                    if "Password successfully changed" in password_edit_in_page.text:
-                        print("parola guncellendi")
-                    else:
+                    if "Password successfully changed" not in password_edit_in_page.text:
                         print("current password hatali girildi.")
                         result=False
         except Exception as ex:
